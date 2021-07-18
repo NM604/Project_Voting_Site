@@ -1,0 +1,30 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS polls;
+DROP TABLE IF EXISTS poll;
+DROP TABLE IF EXISTS allpolls;
+
+CREATE TABLE users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT UNIQUE NOT NULL,
+  pass TEXT NOT NULL
+  );
+  
+CREATE TABLE allpolls (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT UNIQUE NOT NULL,
+  oid INTEGER,
+  cdate DATE,
+  description TEXT,
+  FOREIGN KEY (oid) references users(id) ON DELETE CASCADE
+  );
+
+CREATE TABLE poll (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT UNIQUE NOT NULL,
+  votes INTEGER,
+  pid INTEGER,
+  vid INTEGER,
+  description TEXT,
+  FOREIGN KEY (pid) references allpolls(id) ON DELETE CASCADE,
+  FOREIGN KEY (vid) references users(id) ON DELETE CASCADE
+  );
