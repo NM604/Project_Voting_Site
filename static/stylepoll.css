@@ -1,0 +1,20 @@
+.center_div {
+  border: 10px Tomato;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  background-color: #f64c72;
+  text-align: center;
+  padding: 25px;
+}
+
+.side_div {
+  border: 10px Tomato;
+  border-radius: 8px;
+  width: 15%;
+  background-color: #fbeec1;
+  text-align: center;
+  padding: 15px;
+  left: 2px;
+}

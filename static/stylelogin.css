@@ -1,0 +1,24 @@
+.center_div {
+  border: 10px Tomato;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  background-color: #f64c72;
+  text-align: center;
+  padding: 25px;
+}
+
+.bottom_div {
+  border: Tomato
+  border-style: solid;
+  border-width: 5px;
+  border-top-width: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  background-color: #f64c72;
+  text-align: center;
+  padding: 25px;
+  border-radius: 8px;
+}

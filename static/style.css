@@ -1,0 +1,32 @@
+.table {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.th {
+  height: 100px;
+  padding: 15px;
+  text-align: left;
+}
+
+.td {
+ height: 100px;
+ padding: 15px;
+ text-align: left;
+}
+
+.tr:nth-child(even) {background-color: #f2f2f2;}
+
+.center_div {
+  border: 10px Tomato;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  background-color: #f64c72;
+  text-align: center;
+  padding: 25px;
+}
+
+
