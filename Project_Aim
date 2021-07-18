@@ -1,0 +1,15 @@
+Project 1 - Voting Website
+
+Features:
+
+1. User Login (Mandatory) #done
+
+2. User can vote on existing Polls
+
+3. User can create new poles visible to all other users
+
+4. Poll results are visible after user casts vote for that particular poll
+
+5. Polls will have a deadline of 24 hours, after which, only results will be displayed
+
+6. Anonymous visitors can create profiles #done
