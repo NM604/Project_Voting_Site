@@ -2,14 +2,32 @@ Project 1 - Voting Website
 
 Features:
 
-1. User Login (Mandatory) #done
+1. User Login (Mandatory)                                                                 #done
 
-2. User can vote on existing Polls
+2. User can vote on existing Polls                                                        #done
 
-3. User can create new poles visible to all other users
+3. User can create new poles visible to all other users                                   #done
 
-4. Poll results are visible after user casts vote for that particular poll
+4. Poll results are visible after user casts vote for that particular poll                #done
 
-5. Polls will have a deadline of 24 hours, after which, only results will be displayed
+5. Polls will have a deadline of 7 days, after which, only results will be displayed      #done
 
-6. Anonymous visitors can create profiles #done
+6. Anonymous visitors can create profiles                                                 #done
+
+Base Project Complete!
+
+Tasks to do to improve the webapp:
+
+1. Redo the entire color scheme
+
+2. Works on getting more graphics on the page
+
+3. Change the Phrases
+
+4. Make the results graphically pleasing
+
+5. Fix the numbering on items/candidates
+
+6. Improve login/auth security
+
+7. Push all code to github, write instructions and deploy
