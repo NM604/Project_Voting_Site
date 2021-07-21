@@ -8,8 +8,7 @@ import psycopg2
 def get_db():
   if 'db' not in g: 
     dbname = current_app.config['DATABASE']
-    g.db = sqlite3.connect(dbname)
-    g.db.execute("PRAGMA foreign_keys = ON;")
+    g.db = psycopg2.connect(f"dbname={dbname}")
   return g.db
 
 def close_db(e=None):
@@ -22,7 +21,7 @@ def init_db():
   f = current_app.open_resource("sql/initial.sql")
   sql_code = f.read().decode("ascii")
   cur = db.cursor()
-  cur.executescript(sql_code)
+  cur.execute(sql_code)
   cur.close()
   db.commit()
   close_db()
