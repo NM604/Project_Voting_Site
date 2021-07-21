@@ -14,7 +14,7 @@
       <th scope="col"> <a href="/?order_by=name&order={{order}}">Poll-Name</a>  </th>
       <th scope="col"> <a href="/?order_by=created&order={{order}}">Created On</a>  </th>
       <th scope="col"> Description  </th>
-      <th scope="col"> Participate  </th>
+      <th scope="col"> Results  </th>
      </tr>
      {% for id, name, cdate, description in polls %}
      <tr style="background-color:White">
@@ -22,7 +22,20 @@
         <td class="name">{{name}}</td>
         <td class="cdate">{{cdate}}</td>
         <td class="description">{{description}}</td>
-        <td class="participate"><a href="{{url_for('vote.pollinfo', pid=id, oid=oid)}}">Vote!</a> </td>
+        <td class="results">
+        <table class = "table poll-results">
+        <tr>
+        <td class = "items">Item/Candidate Name</td>
+        <td class = "votes">Votes</td>
+        </tr>
+        {% for item, votes in result %}
+        <tr>
+        <td class = "item">{{item}}</td>
+        <td class = "count">{{votes}}</td>
+        </tr>
+        {%endfor%}
+        </table>
+        </td>
      </tr>
      {%endfor%}
      </table>

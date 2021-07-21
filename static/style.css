@@ -1,5 +1,5 @@
 .table {
-  width: 50%;
+  width: 65%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -7,16 +7,15 @@
 .th {
   height: 100px;
   padding: 15px;
-  text-align: left;
+  text-align: center;
 }
 
 .td {
  height: 100px;
  padding: 15px;
  text-align: left;
+ vertical-align: bottom;
 }
-
-.tr:nth-child(even) {background-color: #f2f2f2;}
 
 .center_div {
   border: 10px Tomato;

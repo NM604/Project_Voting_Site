@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block body %}
+     <div class="center_div">
+     <h2 class="display-4" style="color:White; font-family: Arial, Helvetica, sans-serif; font-size: 40px;">Create your own Poll!</h2>
+     <br/>
+     </div>
+     <br/>
+     <br/>
+     <div class="bottom_div">
+      <p style="color:White; font-family: Arial, Helvetica, sans-serif;">
+      <form action="{{url_for('vote.makepoll', oid=oid)}}" method="POST">
+        <label for = "pollname" style="color:White; font-family: Arial, Helvetica, sans-serif;">Name the poll</label>
+        <br/>
+        <input name = "pollname" type = "text" id = "pollname" required/>
+        <br/>
+        <label for = "polldesc" style="color:White; font-family: Arial, Helvetica, sans-serif;">Give it a brief description</label>
+        <br/>
+        <input name = "polldesc" type = "text" id = "polldesc" required/>
+        <br/>
+        <input type = "submit" value = "Submit">
+        <br/>
+      </form>
+      </p>
+      </div>
+{% endblock %}
