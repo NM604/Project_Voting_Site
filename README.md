@@ -2,7 +2,7 @@ Project - Anonymous voting system
 
 (by Nikhil Abraham Mathew)
 
-This is a website, where users and create, share and vote on polls while the creator can view the results of their own polls. However, registration is mandatory to use the website.
+This is a website, where users can create, share and vote on polls while the creator can view the results of their own polls. However, registration is mandatory to use the website.
 
 Features of this website are:
 1. Registration
