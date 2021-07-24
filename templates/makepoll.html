@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block body %}
      <div class="center_div">
-     <h2 class="display-4" style="color:White; font-family: Arial, Helvetica, sans-serif; font-size: 40px;">Create your own Poll!</h2>
+     <h2 class="display-4" style="color:White; font-family: sans-serif; font-size: 40px;">Create your own Poll!</h2>
      <br/>
      </div>
      <br/>
      <br/>
      <div class="bottom_div">
-      <p style="color:White; font-family: Arial, Helvetica, sans-serif;">
+      <p style="color:White; font-family: sans-serif;">
       <form action="{{url_for('vote.makepoll', oid=oid)}}" method="POST">
         <label for = "pollname" style="color:White; font-family: Arial, Helvetica, sans-serif;">Name the poll</label>
         <br/>

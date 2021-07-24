@@ -1,35 +1,30 @@
 {% extends "base.html" %}
 {% block body %}
-  <div class="center_div">
-  <h2 class="display-4" style="color:White; font-family: Arial, Helvetica, sans-serif; font-size: 40px;">Vote! Let your voice be heard!</h4>
-  <br/>
-  </div>
-  <br/>
-  <br/>
   <p>
-    <div style="overflow-x:auto;">
-    <table class="table poll-table">
-    <tr style="background-color:White">
-      <th scope="col"> <a href="/?order_by=id&order={{order}}">Sl.No.</a> </th>
-      <th scope="col"> <a href="/?order_by=name&order={{order}}">Poll-Name</a>  </th>
-      <th scope="col"> <a href="/?order_by=created&order={{order}}">Created On</a>  </th>
-      <th scope="col"> Description  </th>
-      <th scope="col"> Participate  </th>
+    <div class="top_div" style="overflow-x:auto;">
+    <table class="table">
+    <tr class="thead">
+      <th> <a href="/home/{{oid}}?order_by=id&order={{order}}">Sl.No.</a> </th>
+      <th> <a href="/home/{{oid}}?order_by=name&order={{order}}">Poll-Name</a>  </th>
+      <th> <a href="/home/{{oid}}?order_by=created&order={{order}}">Created On</a>  </th>
+      <th> Description  </th>
+      <th> Participate  </th>
      </tr>
      {% for id, name, cdate, description in polls %}
-     <tr style="background-color:White">
-        <td scope="row" class="id" >{{id}}</td>
-        <td class="name">{{name}}</td>
-        <td class="cdate">{{cdate}}</td>
-        <td class="description">{{description}}</td>
-        <td class="participate"><a href="{{url_for('vote.pollinfo', pid=id, oid=oid)}}">Vote!</a> </td>
+     <tr class="trow">
+        <td>{{id}}</td>
+        <td>{{name}}</td>
+        <td>{{cdate}}</td>
+        <td>{{description}}</td>
+        <td><a href="{{url_for('vote.pollinfo', pid=id, oid=oid)}}">Vote!</a> </td>
      </tr>
      {%endfor%}
      </table>
    </p>
    <div class = "side_div">
-   <p style="color:White; font-family: Arial, Helvetica, sans-serif;">
+   <p style="color:White; font-family: sans-serif;">
     <a href="{{url_for('vote.createpoll', oid=oid)}}">Create your own Poll!</a>
    </p>
+   </div>
    </div>
 {% endblock %}
