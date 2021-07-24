@@ -47,7 +47,7 @@ def home(oid):
   conn = db.get_db()
   cursor = conn.cursor()
   
-  d = datetime.datetime.now().strftime("%d/%m/%Y")
+  d = datetime.datetime.now().strftime("%Y-%m-%d")
   cursor.execute("""
   delete from allpolls
   where (%s-cdate)>=7""",(d,))
@@ -150,12 +150,12 @@ def pollinfo(pid, oid):
   elif oby[1] == request.args.get("order_by", "name"):
     order = request.args.get("order", "asc")
     if order == "asc":
-      cursor.execute("""select id, item, description from poll where pid = %s  order by name;""", (pid,))
+      cursor.execute("""select id, item, description from poll where pid = %s  order by item;""", (pid,))
     else:
-      cursor.execute("""select id, item, description from poll where pid = %s  order by name desc;""", (pid,))
+      cursor.execute("""select id, item, description from poll where pid = %s  order by item desc;""", (pid,))
       
   polls = cursor.fetchall()
-  return render_template("info.html", pid=pid, polls=polls, oid=oid)
+  return render_template("info.html", pid=pid, polls=polls, oid=oid, order="desc" if order=="asc" else "asc")
   
 @bp.route("/pollresult/<pid>/<oid>", methods=["POST"])
 def result(pid, oid):
@@ -207,7 +207,7 @@ def homewr(oid):
   polls = cursor.fetchall()
   
   
-  cursor.execute(f"select item, votes from poll p, allpolls a where p.pid = a.id order by p.votes")
+  cursor.execute(f"select p.item, p.votes, p.pid from poll p, allpolls a where p.pid = a.id order by p.votes")
   result = cursor.fetchall()
   
   return render_template("homewr.html", oid=oid, result=result, polls=polls, order="desc" if order=="asc" else "asc")
