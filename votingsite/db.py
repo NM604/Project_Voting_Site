@@ -7,7 +7,7 @@ import psycopg2
 
 def get_db():
   if 'db' not in g:
-
+    DATABASE_URL = os.environ.get('DATABASE_URL')
     g.db = psycopg2.connect(DATABASE_URL, sslmode='require')
   return g.db
 
