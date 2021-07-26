@@ -6,7 +6,7 @@ from . import db
 def create_app(test_config=None):
   app = Flask("votingsite")
   app.secret_key = 'very_secret_key'
-  app.config.from_mapping(DATABASE="votingsite")
+  app.config.from_mapping(DATABASE="DATABASE_URL")
   if test_config is not None:
     app.config.update(test_config)
   try:
