@@ -7,6 +7,7 @@ from . import db
 def create_app(test_config=None):
   app = Flask("votingsite")
   app.secret_key = 'very_secret_key'
+  os.environ['DATABASE_URL'] = postgres://mlhdpdlvisnyjz:50f16d388f1aeae421cc52ca71201b1b274d1be7b5edbe6fa213a8560a983074@ec2-3-237-55-151.compute-1.amazonaws.com:5432/d72i87oqrosauq
   DATABASES = { 'default': dj_database_url.config() }
   DATABASE_URL = os.environ['DATABASE_URL']
   if test_config is not None:
