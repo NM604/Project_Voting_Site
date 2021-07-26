@@ -1,11 +1,13 @@
 import os
 from flask import Flask, render_template, flash
 import psycopg2
+import dj_database_url
 from . import db
 
 def create_app(test_config=None):
   app = Flask("votingsite")
   app.secret_key = 'very_secret_key'
+  DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
   DATABASE_URL = os.environ['DATABASE_URL']
   if test_config is not None:
     app.config.update(test_config)
