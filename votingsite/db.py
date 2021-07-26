@@ -4,11 +4,14 @@ from flask import current_app, g, flash
 from flask.cli import with_appcontext
 import click
 import psycopg2
+import os
+
+DATABASE_URL = os.environ.get('DATABASE_URL')
 
 def get_db():
   if 'db' not in g:
-    dbname = current_app.config['DATABASE_URL']
-    g.db = psycopg2.connect(dbname, sslmode='require')
+    
+    g.db = psycopg2.connect(DATABASE_URL, sslmode='require')
   return g.db
 
 def close_db(e=None):
