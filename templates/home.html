@@ -24,6 +24,19 @@
    <div class = "side_div">
    <p style="color:White; font-family: sans-serif;">
     <a href="{{url_for('vote.createpoll', oid=oid)}}">Create your own Poll!</a>
+    <br/>
+    <br/>
+    <a href="{{url_for('vote.homewr', oid=oid)}}">View the results of your Polls</a>
+    <br/>
+   </p>
+   <p style="color:White; font-family: sans-serif;">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            {{message}}
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
    </p>
    </div>
    </div>

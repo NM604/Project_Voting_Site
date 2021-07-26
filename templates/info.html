@@ -24,6 +24,8 @@
         <input type = "submit" value = "Submit Vote">
         </form>
         </p>
+        <p style="color:White; font-family: sans-serif;">
+        <a href="{{url_for('vote.editpoll', pid=pid, oid=oid)}}">Click here to edit this poll</a>
       </div>
     </p>
 {% endblock %}    

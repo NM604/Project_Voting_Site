@@ -1,14 +1,7 @@
 {% extends "base.html" %}
-{% block body %}
-    <div class="center_div">
-      <h2 class="display-4" style="color:White; font-family: Arial, Helvetica, sans-serif; font-size: 40px;">Welcome! Vote, it's your right! Let your voice be heard!</h2>
-      <br/>
-      </div>
-     <br/>
-     <br/>
-     </div>
+{% block body %}     
      <div class="bottom_div">
-      <p style="color:White; font-family: Arial, Helvetica, sans-serif;">
+      <p style="color:White; font-family: sans-serif;">
       <form method = "post" action = "/login">
       <label for = "username" style="color:White; font-family: Arial, Helvetica, sans-serif;">Enter your username</label>
       <br/>
@@ -17,17 +10,16 @@
       <br/>
       <label for = "password" style="color:White; font-family: Arial, Helvetica, sans-serif;">Enter your password</label>
       <br/>
-      <input name = "password" type = "text" id = "password" required/>
+      <input name = "password" type = "password" id = "password" required/>
       <br/>
       <br/>
-      <input type = "submit" value = "Login">
+      <input type = "submit" value = "Login"/>
       </form>
       </p>
-      <p style="color:White; font-family: Arial, Helvetica, sans-serif;">
+      <p style="color:White; font-family: sans-serif;">
         <a href="{{url_for('vote.create')}}">Not an existing user? Create a profile!</a>
         <br/>
         <br/>
         {{status}}
-      </p>
      </div>
 {% endblock %}

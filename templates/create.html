@@ -15,6 +15,14 @@
       <br/>
       <input type = "submit" value = "Submit">
       </form>
+      <p style="color:White; font-family: sans-serif;">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            {{message}}
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
       </p>
      </div>
 {% endblock %}

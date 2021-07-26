@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class = "side_div">
+      <p style="color:White; font-family: sans-serif;">
+        <br/>
+        <br/>
+        {{status}}
+        <br/>
+        <br/>
+        <a href="{{url_for('vote.home', oid=oid)}}">Go back home</a>
+        <br/>
+        <br/>
+       </p>
+     </div>
+{% endblock %}
