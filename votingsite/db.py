@@ -7,8 +7,8 @@ import psycopg2
 
 def get_db():
   if 'db' not in g:
-    DATABASE_URL = os.environ.get('DATABASE_URL')
-    g.db = psycopg2.connect(DATABASE_URL, sslmode='require')
+    dbname = current_app.config['DATABASE_URL']
+    g.db = psycopg2.connect(dbname, sslmode='require')
   return g.db
 
 def close_db(e=None):
