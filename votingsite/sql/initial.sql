@@ -35,6 +35,5 @@ CREATE TABLE checkvote (
   id SERIAL PRIMARY KEY,
   polls INTEGER,
   userid INTEGER UNIQUE,
-  FOREIGN KEY (polls) references allpolls(id) ON DELETE CASCADE,
-  FOREIGN KEY (userid) references users(id) ON DELETE CASCADE
+  FOREIGN KEY (polls) references allpolls(id) ON DELETE CASCADE
   );
