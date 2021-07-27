@@ -97,7 +97,7 @@ def makepoll(oid):
    polldesc = request.form['polldesc']
    polldur = request.form['polldur']
    pollowner = oid
-   polldate = datetime.datetime.now().strftime("%d/%m/%Y")
+   polldate = datetime.datetime.now().strftime("%m/%d/%Y")
    
    cursor.execute("""insert into allpolls (name, oid, cdate, duration, description) values (%s, %s, %s, %s, %s);""", (pollname, pollowner, polldate, polldur, polldesc))
    
