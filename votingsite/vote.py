@@ -178,8 +178,10 @@ def result(pid, oid):
   vid = cursor.fetchall()
   for i in range(0, len(vid)):
     voter.append(int(vid[i][0])) 
+  
+  check = pid+oid
     
-  if int(oid) in voter:
+  if int(check) in voter:
     flash('You have already voted for this poll')
     return redirect(url_for("vote.home", oid=oid), 302)
   
@@ -187,7 +189,7 @@ def result(pid, oid):
   update poll
   set votes = votes + 1
   where id = %s and pid = %s;""", (choice, pid))
-  cursor.execute("""insert into checkvote (polls, userid) values (%s, %s);""", (pid, oid))
+  cursor.execute("""insert into checkvote (polls, userid) values (%s, %s);""", (pid, check))
   
   conn.commit()
   return redirect(url_for("vote.home", oid=oid), 302)
