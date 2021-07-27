@@ -14,7 +14,8 @@ Features:
 
 6. Anonymous visitors can create profiles                                                 #done
 
-Base Project Complete!
+7. Users can vote only once on each poll                                                  #done
+
 
 Tasks to do to improve the webapp:
 
@@ -22,12 +23,4 @@ Tasks to do to improve the webapp:
 
 2. Works on getting more graphics on the page                                             #done
 
-3. Change the Phrases                                                                     #done
-
-4. Make the results graphically pleasing                                                  #done
-
-5. Fix the numbering on items/candidates                                                  #done
-
-6. Improve login/auth security
-
-7. Push all code to github, write instructions and deploy
+3. Push all code to github, write instructions and deploy                                 #done
