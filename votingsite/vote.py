@@ -53,7 +53,7 @@ def home(oid):
   conn = db.get_db()
   cursor = conn.cursor()
   
-  d = datetime.datetime.now().strftime("%Y-%m-%d")
+  d = datetime.datetime.now().strftime("%m-%d-%Y")
   cursor.execute("""
   delete from allpolls
   where (%s-cdate) >= duration""",(d,))
@@ -198,7 +198,7 @@ def homewr(oid):
   conn = db.get_db()
   cursor = conn.cursor()
   
-  d = datetime.datetime.now().strftime("%d/%m/%Y")
+  d = datetime.datetime.now().strftime("%m/%d/%Y")
   cursor.execute("""
   delete from allpolls
   where (%s-cdate)>=7""",(d,))
